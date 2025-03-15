@@ -1,18 +1,20 @@
+/* ==== Products Container ==== */
 #products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Default: 3 columns */
+    /* 3 columns layout */
     gap: 16px;
     max-width: 1138px;
     margin: 20px auto;
     padding: 5px;
 }
 
+/* ==== Product Card ==== */
 #products .card {
     border: 1px solid #ddd;
-    text-align: left;
     border-radius: 20px;
     overflow: hidden;
+    text-align: left;
 }
 
 #products .card>article {
@@ -21,20 +23,26 @@
     padding: 9px;
 }
 
-
 #products .card>article>span {
     display: flex;
     flex-direction: column;
 }
 
+/* ==== Rating Section ==== */
 #products .rating {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    /* 8px */
+    margin-bottom: 10px;
+}
+
+#products .rating>span:first-of-type {
     color: #002069;
-    margin-bottom: 0.625rem;
-    /* 10px */
+    /* Star color (filled) */
+}
+
+#products .rating>span:last-of-type {
+    color: #D3D3D3;
+    /* Star color (empty) */
 }
 
 #products .rating>span {
@@ -42,6 +50,13 @@
     color: #000;
 }
 
+#products .rating>p {
+    color: #000;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+/* ==== Product Image ==== */
 #products article img {
     max-width: 170px;
     max-height: 170px;
@@ -49,23 +64,22 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* ==== Product Title & Description ==== */
 #products article h2 {
-    font-size: 0.875rem;
-    /* 14px */
+    font-size: 14px;
     color: #474747;
     font-weight: 400;
     text-align: left;
 }
 
 #products article p {
-    font-size: 1rem;
-    /* 16px */
+    font-size: 16px;
     color: #000;
     font-weight: 400;
     text-align: left;
 }
 
-/* Price and Pack */
+/* ==== Price & Pack Section ==== */
 #products>section {
     display: flex;
     flex-direction: column;
@@ -83,33 +97,41 @@
     height: 49px;
 }
 
+#products>section>div>p:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
 #products>section>div>span {
     display: flex;
     flex-direction: column;
     text-align: right;
-    gap: 0.25rem;
-    /* 4px */
+    gap: 4px;
 }
 
 #products>section>div>span>p:first-of-type {
-    font-size: 1rem;
-    /* 18px */
+    font-size: 16px;
     font-weight: 700;
+    /* Price */
 }
 
 #products>section>div>span>p:last-of-type {
-    font-size: 0.70rem;
-    /* 12px */
+    font-size: 12px;
     color: #474747;
+    /* Pack info */
 }
 
+/* ==== Add to Cart Button ==== */
 #products>section button {
     cursor: pointer;
     width: 100%;
     height: 44px;
     background-color: #002069;
-    color: white;
+    color: #fff;
     font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
 #products>section .unavailable {
@@ -122,7 +144,9 @@
     background-color: #265488;
 }
 
-/* Media query for screens 734px or smaller */
+/* ==== Responsive Layout ==== */
+
+/* Tablet: Switch to column layout inside card */
 @media (max-width: 1130px) {
     #products .card>article {
         flex-direction: column;
@@ -138,15 +162,14 @@
     }
 }
 
-/* Media query for screens 734px or smaller */
+/* Mobile: 2 columns layout */
 @media (max-width: 734px) {
     #products {
         grid-template-columns: repeat(2, 1fr);
-        /* Switch to 2 columns */
     }
 }
 
-/* Media query for screens 364px or smaller */
+/* Small screens: Reduce font sizes */
 @media (max-width: 364px) {
 
     #products article h2,
@@ -155,7 +178,6 @@
     #products>section>div>span>p:first-of-type,
     #products>section>div>span>p:last-of-type,
     #products>section button {
-        font-size: 0.75rem;
-        /* 12px */
+        font-size: 12px;
     }
 }

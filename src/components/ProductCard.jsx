@@ -1,5 +1,5 @@
-// Importing the required CSS file for styling
 import "@/styles/forComponents/productCard.css";
+import * as Icons from "@/utils/icons.util"; // Import All Icons
 
 // ProductCard component to display a list of products
 export const ProductCard = () => {
@@ -13,14 +13,20 @@ export const ProductCard = () => {
                             src={product.img}
                             alt={product.name}
                             className="product-image"
-                            loading="lazy" // Improves performance by lazy-loading images
+                            loading="lazy"
                         />
 
                         <span>
                             {/* Product Rating */}
                             {product.rating !== null && (
                                 <div className="rating" aria-label={`Rating: ${product.rating} out of 5`}>
-                                    {'★'.repeat(product.rating)}{'☆'.repeat(5 - product.rating)} <span>{product.review}</span>
+                                    <span> {/* Blue color for filled stars */}
+                                        {'★'.repeat(product.rating)}
+                                    </span>
+                                    <span> {/* Gray color for empty stars */}
+                                        {'★'.repeat(5 - product.rating)}
+                                    </span>
+                                    <p>{product.review}</p>
                                 </div>
                             )}
 
@@ -33,15 +39,19 @@ export const ProductCard = () => {
                     </article>
 
                     <div>
-                        {product.pack && <p>{product.pack}</p>}
+                        {/* Pack Information */}
+                        {product.pack && (
+                            <p>
+                                {product.pack}
+                                <Icons.ArrowIcon />
+                            </p>
+                        )}
 
-                        <span style={product.pricePerPiece === 0 ? { margin: " 0 auto" } : {}}>
-                            <p
-                                style={product.pricePerPiece === 0 ? { fontSize: "18px", textAlign: "center", margin: " 0 auto", color: "#000" } : {}}
-                            >
+                        {/* Product Price */}
+                        <span className={product.pricePerPiece === 0 ? "noPack" : ""}>
+                            <p className={product.pricePerPiece === 0 ? "centered-price" : ""}>
                                 € {product.price.toFixed(2)}
                             </p>
-
 
                             {/* Price Per Piece */}
                             {product.pricePerPiece > 0 && (
