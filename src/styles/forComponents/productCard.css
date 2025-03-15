@@ -162,10 +162,19 @@
     }
 }
 
+.centered-price {
+    color: #000 !important;
+    font-size: 20px;
+}
+
 /* Mobile: 2 columns layout */
 @media (max-width: 734px) {
     #products {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    #products .card {
+        border-radius: 10px;
     }
 }
 
@@ -177,6 +186,7 @@
     #products .rating>span,
     #products>section>div>span>p:first-of-type,
     #products>section>div>span>p:last-of-type,
+    #products>section>div>p:first-of-type,
     #products>section button {
         font-size: 12px;
     }

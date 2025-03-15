@@ -48,8 +48,10 @@ export const ProductCard = () => {
                         )}
 
                         {/* Product Price */}
-                        <span className={product.pricePerPiece === 0 ? "noPack" : ""}>
-                            <p className={product.pricePerPiece === 0 ? "centered-price" : ""}>
+                        <span style={product.pricePerPiece === 0 ? { margin: " 0 auto" } : {}}>
+                            <p
+                                style={product.pricePerPiece === 0 ? { fontSize: "14px", textAlign: "center", margin: " 0 auto", color: "#000" } : {}}
+                            >
                                 € {product.price.toFixed(2)}
                             </p>
 
