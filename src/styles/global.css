@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --dark-color: #000000;
+    --light-color: #FFFFFF;
+    --primary-color: #501AC8;
+    --hover-color: #B366CF;
+    --gradient-color: #1C064C;
+    --footer-color: #370E92;
+}
+
+/* CSS Reset to remove default browser styles */
+* {
+    /* outline: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default styles for common elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+button {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+    background: none;
+}
