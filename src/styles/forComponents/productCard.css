@@ -171,6 +171,7 @@
 @media (max-width: 734px) {
     #products {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     #products .card {
